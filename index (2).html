@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitechtee - Eco-Sanctuaries</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind config for custom fonts or colors if needed -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-stone-50 text-stone-800 flex flex-col font-sans antialiased selection:bg-emerald-200">
+
+  <!-- Premium Glassmorphism Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-stone-100 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+        <div class="bg-emerald-800 p-2.5 rounded-xl shadow-lg shadow-emerald-900/10 flex items-center justify-center">
+          <i data-lucide="leaf" class="h-6 w-6 text-white"></i>
+        </div>
+        <div>
+          <span class="text-xl font-black uppercase tracking-widest text-emerald-950 block">Arquitechtee</span>
+          <span class="text-xs font-semibold text-emerald-600 block tracking-wider uppercase -mt-1">Eco-Sanctuaries</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="hidden md:flex space-x-1 lg:space-x-2">
+        <button onclick="navigateTo('home')" id="nav-home" class="nav-btn flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-emerald-800 text-white shadow-md shadow-emerald-950/10">
+          <i data-lucide="home" class="h-4 w-4"></i>
+          <span>Home</span>
+        </button>
+        <button onclick="navigateTo('designs')" id="nav-designs" class="nav-btn flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-stone-600 hover:text-emerald-800 hover:bg-emerald-50/50">
+          <i data-lucide="layers" class="h-4 w-4"></i>
+          <span>House Designs</span>
+        </button>
+        <button onclick="navigateTo('schedule')" id="nav-schedule" class="nav-btn flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-stone-600 hover:text-emerald-800 hover:bg-emerald-50/50">
+          <i data-lucide="calendar" class="h-4 w-4"></i>
+          <span>Schedule Tour</span>
+        </button>
+        <button onclick="navigateTo('upload')" id="nav-upload" class="nav-btn flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-stone-600 hover:text-emerald-800 hover:bg-emerald-50/50">
+          <i data-lucide="upload-cloud" class="h-4 w-4"></i>
+          <span>Co-Design Lab</span>
+        </button>
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center space-x-4">
+        <button onclick="navigateTo('schedule')" class="hidden sm:inline-flex bg-stone-900 hover:bg-stone-800 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest shadow-md transition-all duration-200">
+          Book Consultation
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Areas -->
+  <main class="flex-grow">
+
+    <!-- ================= VIEW 1: HOME ================= -->
+    <div id="page-home" class="page-content">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden bg-gradient-to-b from-stone-100 to-stone-50 py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+              <div class="inline-flex items-center space-x-2 bg-emerald-100 text-emerald-800 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                <i data-lucide="sparkles" class="h-3 w-3"></i>
+                <span>The Architecture of Tomorrow</span>
+              </div>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 leading-tight tracking-tight">
+                Eco-Friendly Houses <br />
+                <span class="text-emerald-700 bg-gradient-to-r from-emerald-800 to-green-600 bg-clip-text text-transparent">At Every Price Point</span>
+              </h1>
+              <p class="text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 font-medium">
+                At Arquitechtee, sustainable living isn’t a premium. We engineer hyper-sustainable, carbon-negative, solar-powered habitats suited for both simple micro-living and grand structural aesthetics.
+              </p>
+              <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                <button onclick="navigateTo('designs')" class="bg-emerald-800 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-3 shadow-lg shadow-emerald-950/20 transition-all duration-200">
+                  <span>Explore Our Plots</span>
+                  <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                </button>
+                <button onclick="navigateTo('upload')" class="bg-white hover:bg-stone-100 text-stone-800 border-2 border-stone-200 px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all duration-200">
+                  <i data-lucide="upload-cloud" class="h-5 w-5 text-emerald-700"></i>
+                  <span>Share Your Idea</span>
+                </button>
+              </div>
+
+              <div class="grid grid-cols-3 gap-6 pt-8 border-t border-stone-200 max-w-md mx-auto lg:mx-0">
+                <div>
+                  <span class="block text-2xl font-black text-stone-950">100%</span>
+                  <span class="block text-xs font-bold text-stone-500 uppercase tracking-wider">Carbon Offset</span>
+                </div>
+                <div>
+                  <span class="block text-2xl font-black text-stone-950">Net 0</span>
+                  <span class="block text-xs font-bold text-stone-500 uppercase tracking-wider">Energy Waste</span>
+                </div>
+                <div>
+                  <span class="block text-2xl font-black text-stone-950">Zero</span>
+                  <span class="block text-xs font-bold text-stone-500 uppercase tracking-wider">Toxicity Materials</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                <!-- Interactive Visual Canvas Showcase -->
+                <div class="bg-white p-4 rounded-2xl shadow-xl border border-stone-100 transform rotate-1 hover:rotate-0 transition-transform duration-500 cursor-pointer" onclick="openHouseModal('canopy-nest')">
+                  <div class="relative aspect-video rounded-xl overflow-hidden bg-emerald-950" id="hero-svg-container">
+                    <!-- Dynamic rendering canopy nest outdoor view -->
+                  </div>
+                  <div class="mt-4 flex justify-between items-center">
+                    <div>
+                      <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Featured Concept</span>
+                      <h3 class="text-lg font-bold text-stone-900">The Canopy Nest</h3>
+                    </div>
+                    <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-lg text-sm font-bold">
+                      $185,000
+                    </span>
+                  </div>
+                </div>
+                
+                <!-- Floating architectural badge -->
+                <div class="absolute -top-6 -left-6 bg-stone-900 text-white p-4 rounded-xl shadow-lg hidden md:block">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="award" class="h-5 w-5 text-yellow-400"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider">AIA Green Design Nominee</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 class="text-3xl font-black text-stone-950 tracking-tight sm:text-4xl">
+              Engineering Living Ecosystems, Not Just Houses.
+            </h2>
+            <p class="text-stone-600 font-medium">
+              We harness solar output, thermodynamic insulation, and graywater purification systems to deliver beautiful houses tailored to modern human requirements and planetary boundaries.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-stone-50 p-8 rounded-2xl space-y-4 border border-stone-100 hover:shadow-lg transition-all duration-300">
+              <div class="bg-emerald-100 text-emerald-800 p-3.5 rounded-xl w-fit">
+                <i data-lucide="sun" class="h-6 w-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-stone-950">Active Solar Integration</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Optimized photovoltaic setups generate more electricity than your household consumes. Store excess energy or feed it back to municipal grids.
+              </p>
+            </div>
+
+            <div class="bg-stone-50 p-8 rounded-2xl space-y-4 border border-stone-100 hover:shadow-lg transition-all duration-300">
+              <div class="bg-emerald-100 text-emerald-800 p-3.5 rounded-xl w-fit">
+                <i data-lucide="wind" class="h-6 w-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-stone-950">Thermodynamic Airflow</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Custom-oriented building angles and high thermal-mass elements allow natural airflow cycles to cool and warm houses naturally without structural reliance on modern HVAC.
+              </p>
+            </div>
+
+            <div class="bg-stone-50 p-8 rounded-2xl space-y-4 border border-stone-100 hover:shadow-lg transition-all duration-300">
+              <div class="bg-emerald-100 text-emerald-800 p-3.5 rounded-xl w-fit">
+                <i data-lucide="droplets" class="h-6 w-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-stone-950">Water Stewardship Loops</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Our advanced micro-filtration graywater systems channel wastewater through natural bioswales to cleanly nourish home landscaping and gardens.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Eco Call-to-action -->
+      <section class="py-16 bg-emerald-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <svg width="100%" height="100%">
+            <pattern id="leaf-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M10,20 Q20,10 30,20 T40,20" fill="none" stroke="#ffffff" strokeWidth="2" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#leaf-pattern)" />
+          </svg>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-6 relative z-10">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 bg-emerald-950/40 px-3 py-1.5 rounded-full">Explore the Future of Dwelling</span>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight">Ready to see our beautiful, eco-friendly plans in high-definition?</h2>
+          <p class="text-emerald-100 max-w-xl mx-auto text-sm sm:text-base">
+            Click on our house plots catalog, view fully designed exterior elevation sketches, modern interior room models, and full blueprint schematics.
+          </p>
+          <button onclick="navigateTo('designs')" class="bg-white hover:bg-stone-100 text-emerald-900 px-8 py-3.5 rounded-xl font-bold transition-all duration-200 shadow-md flex items-center justify-center space-x-2 mx-auto">
+            <span>Browse House Catalog</span>
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VIEW 2: DESIGNS ================= -->
+    <div id="page-designs" class="page-content hidden">
+      <section class="py-12 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div class="space-y-2 max-w-2xl">
+              <div class="inline-flex items-center space-x-2 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                <span>Our Masterpieces</span>
+              </div>
+              <h1 class="text-3xl sm:text-4xl font-black text-stone-900">Eco-Friendly Plots</h1>
+              <p class="text-stone-600 font-medium">
+                Inspect each architectural creation. Click on a plot's layout to view detailed outdoor perspectives, cozy modern living interiors, and architectural floorplans.
+              </p>
+            </div>
+            <div class="flex items-center bg-white border border-stone-200 px-4 py-2.5 rounded-xl text-stone-500 font-medium text-sm shadow-sm">
+              <span class="text-emerald-700 font-bold mr-2">3</span> Master Designs Online
+            </div>
+          </div>
+
+          <!-- Master Designs Cards Container -->
+          <div class="grid md:grid-cols-3 gap-8" id="designs-grid">
+            <!-- Rendered dynamically by javascript -->
+          </div>
+
+          <!-- Showcase banner inviting custom designs -->
+          <div class="mt-16 bg-stone-900 text-white rounded-3xl p-8 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+            <div class="space-y-4 max-w-xl text-center md:text-left">
+              <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Have a Dream Floorplan?</span>
+              <h3 class="text-2xl sm:text-3xl font-black tracking-tight">Upload and design with Arquitechtee engineers</h3>
+              <p className="text-stone-400 text-sm">
+                Submit your personal blueprints, ideas, or architectural mockups. We will analyze your specifications and respond with a modern, eco-friendly estimate.
+              </p>
+            </div>
+            <button onclick="navigateTo('upload')" class="bg-emerald-800 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all duration-200 shrink-0 uppercase tracking-wider text-xs">
+              Upload Your Concept Design
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VIEW 3: SCHEDULE TOUR ================= -->
+    <div id="page-schedule" class="page-content hidden">
+      <section class="py-12 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
+            <span class="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Meet the Architects</span>
+            <h1 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight">Schedule Your Design Consultation</h1>
+            <p class="text-stone-600 font-medium">
+              Tour any plot. See our active ecological architects availability, select an open time slot, and secure your guided viewing.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-12 gap-8">
+            <!-- Left Side: Landlord Profiles & Availability Grid -->
+            <div class="lg:col-span-7 space-y-6">
+              <h3 class="text-lg font-bold text-stone-900 flex items-center gap-2">
+                <i data-lucide="users" class="h-5 w-5 text-emerald-800"></i>
+                <span>Select an Ecological Landlord Architect</span>
+              </h3>
+
+              <div class="space-y-4" id="landlords-container">
+                <!-- Rendered Dynamically by JS -->
+              </div>
+
+              <!-- Dynamic Time Slot Selector Card -->
+              <div class="bg-white rounded-3xl p-6 border border-stone-100 shadow-md">
+                <h4 class="font-bold text-stone-900 mb-4 flex items-center gap-2">
+                  <i data-lucide="clock" class="h-4 w-4 text-emerald-800"></i>
+                  <span id="slots-header-title">Choose Architect's Available Slots</span>
+                </h4>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="time-slots-grid">
+                  <!-- Rendered Dynamically by JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Appointment Request Form -->
+            <div class="lg:col-span-5">
+              <div class="bg-white p-6 sm:p-8 rounded-3xl border border-stone-100 shadow-lg sticky top-24">
+                <div class="space-y-2 mb-6">
+                  <h3 class="text-xl font-black text-stone-900">Request Meeting</h3>
+                  <p class="text-stone-500 text-xs font-medium">
+                    Fill your information and we will match you for a tour.
+                  </p>
+                </div>
+
+                <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                  <!-- Selected Plot Input -->
+                  <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-widest mb-1">
+                      Designated Plot Tour
+                    </label>
+                    <select id="booking-plot-select" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-semibold text-stone-800">
+                      <!-- Rendered Dynamically -->
+                    </select>
+                  </div>
+
+                  <!-- Landlord readout -->
+                  <div class="bg-stone-50 rounded-xl p-3 border border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-600">
+                    <span>Architect Representative:</span>
+                    <span id="booking-representative" class="text-emerald-800 font-bold">-</span>
+                  </div>
+
+                  <!-- User details -->
+                  <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-widest mb-1">
+                      Your Name
+                    </label>
+                    <input type="text" id="booking-client-name" required placeholder="Jane Doe" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-widest mb-1">
+                      Email Address
+                    </label>
+                    <input type="email" id="booking-client-email" required placeholder="jane@example.com" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                  </div>
+
+                  <!-- Action Submission -->
+                  <div class="pt-2">
+                    <button type="submit" id="booking-submit-btn" disabled class="w-full font-bold py-4 rounded-xl text-xs uppercase tracking-wider shadow-md transition-all duration-200 flex items-center justify-center space-x-2 bg-stone-200 text-stone-400 cursor-not-allowed">
+                      <i data-lucide="check-circle" class="h-4 w-4"></i>
+                      <span id="booking-submit-text">Select a Time Slot First</span>
+                    </button>
+                  </div>
+                </form>
+
+                <div class="mt-4 p-3 bg-stone-50 rounded-xl border border-stone-200/50">
+                  <p class="text-[10px] text-stone-500 leading-relaxed text-center font-medium">
+                    Upon booking, we will send an architectural catalog PDF and a direct meeting invite to your inbox immediately.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VIEW 4: CO-DESIGN LAB ================= -->
+    <div id="page-upload" class="page-content hidden">
+      <section class="py-12 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="grid lg:grid-cols-12 gap-12 items-start">
+            <!-- Left Side: Co-Design Principles & Recent Uploads -->
+            <div class="lg:col-span-6 space-y-8">
+              <div class="space-y-4">
+                <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Crowd Sourced Sustainability</span>
+                <h1 class="text-3xl sm:text-4xl font-black text-stone-900 leading-tight">Co-Design Lab</h1>
+                <p class="text-stone-600 font-medium">
+                  At Arquitechtee, we believe the best designs are collaborative. Upload your custom eco-architectural concepts, material specifications, and dreams. Our structural analysis team will model your plan to offer structural backing.
+                </p>
+              </div>
+
+              <!-- Co-design cards -->
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-stone-100 shadow-sm space-y-2">
+                  <div class="text-emerald-800 font-bold text-sm flex items-center gap-1.5">
+                    <i data-lucide="hammer" class="h-4 w-4"></i>
+                    <span>Materials We Audit</span>
+                  </div>
+                  <p class="text-xs text-stone-500 leading-relaxed font-semibold">
+                    Rammed earth, carbon concrete, solar glass, green hempcrete, insulated bamboo, and CLT.
+                  </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-stone-100 shadow-sm space-y-2">
+                  <div class="text-emerald-800 font-bold text-sm flex items-center gap-1.5">
+                    <i data-lucide="file-text" class="h-4 w-4"></i>
+                    <span>Analysis Deliverables</span>
+                  </div>
+                  <p class="text-xs text-stone-500 leading-relaxed font-semibold">
+                    Within 72 hours, you get structural loads, thermodynamic flow simulations, and an eco-estimate.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Community Uploads Feed Section -->
+              <div class="space-y-4">
+                <h3 class="text-lg font-bold text-stone-900 flex items-center gap-2">
+                  <i data-lucide="sparkles" class="h-5 w-5 text-emerald-800"></i>
+                  <span>Recent Submissions from Co-Architects</span>
+                </h3>
+
+                <div class="space-y-3" id="uploads-feed">
+                  <!-- Dynamically populated or default empty state -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Upload Form -->
+            <div class="lg:col-span-6">
+              <div class="bg-white p-6 sm:p-10 rounded-3xl border border-stone-100 shadow-xl space-y-6">
+                <div>
+                  <h2 class="text-2xl font-black text-stone-900">Co-Design Project Form</h2>
+                  <p class="text-stone-500 text-xs font-medium mt-1">
+                    Ensure all required parameters are detailed to qualify for eco-architect audits.
+                  </p>
+                </div>
+
+                <form id="upload-form" onsubmit="handleUploadSubmit(event)" class="space-y-4">
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-1">
+                        Your Full Name
+                      </label>
+                      <input type="text" id="upload-name" required placeholder="Alex Mercer" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                    </div>
+
+                    <div>
+                      <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-1">
+                        Your Email Address
+                      </label>
+                      <input type="email" id="upload-email" required placeholder="alex@mercer.com" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                    </div>
+                  </div>
+
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-1">
+                        Design Concept Name
+                      </label>
+                      <input type="text" id="upload-title" required placeholder="E.g., Skyward Terraces" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                    </div>
+
+                    <div>
+                      <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-1">
+                        Estimated House Cost ($)
+                      </label>
+                      <input type="number" id="upload-price" required placeholder="E.g., 220000" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-1">
+                      Predominant Sustainable Materials Used
+                    </label>
+                    <input type="text" id="upload-materials" required placeholder="E.g., Recycled Timber, Hempcrete insulation, Solar Glass" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800" />
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-1">
+                      Brief Blueprint Description / Philosophy
+                    </label>
+                    <textarea id="upload-desc" rows="4" required placeholder="Detail your thermodynamic cooling solutions, rainwater systems or window parameters..." class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-800/20 focus:border-emerald-800 transition-all font-medium text-stone-800"></textarea>
+                  </div>
+
+                  <!-- Mock File upload box -->
+                  <div>
+                    <label class="block text-[11px] font-black tracking-widest text-stone-400 uppercase mb-2">
+                      Upload Plan Images / Floorplan Drafts (Mock)
+                    </label>
+                    <div class="border-2 border-dashed border-stone-200 rounded-2xl p-6 text-center bg-stone-50 hover:bg-stone-100 transition-colors cursor-pointer">
+                      <i data-lucide="upload-cloud" class="h-8 w-8 text-stone-400 mx-auto mb-2"></i>
+                      <p class="text-xs text-stone-600 font-bold">Drag and drop structural files here</p>
+                      <p class="text-[10px] text-stone-400 mt-1">Supports PDF, PNG, JPG, DWG, BIMx up to 50MB</p>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="w-full bg-emerald-800 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-emerald-950/25">
+                    Submit Design Proposal
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ================= HIGH FIDELITY DYNAMIC MODALS ================= -->
+
+  <!-- House Inspection Modal -->
+  <div id="modal-inspection" class="fixed inset-0 z-50 flex items-center justify-center bg-stone-950/80 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white rounded-3xl w-full max-w-5xl shadow-2xl border border-stone-100 overflow-hidden transform transition-all flex flex-col lg:flex-row max-h-[90vh]">
+      
+      <!-- Left Column: SVG Visual Container -->
+      <div class="lg:w-3/5 bg-stone-950 p-6 flex flex-col justify-between items-center relative min-h-[350px] lg:min-h-[500px]">
+        
+        <!-- Active View Title Overlay -->
+        <div class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
+          Currently Viewing: <span id="modal-view-title" class="text-emerald-400 font-black">outdoor</span>
+        </div>
+
+        <!-- SVG Frame -->
+        <div class="w-full flex-grow flex items-center justify-center p-2" id="modal-svg-frame">
+          <!-- Dynamic SVG injected here -->
+        </div>
+
+        <!-- Dynamic View Swapping Controllers -->
+        <div class="flex bg-stone-900 p-1.5 rounded-2xl space-x-2 border border-stone-800 mt-4 w-full justify-around">
+          <button onclick="changeModalView('outdoor')" id="btn-view-outdoor" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-200 bg-emerald-800 text-white shadow">
+            Outdoor View
+          </button>
+          <button onclick="changeModalView('indoor')" id="btn-view-indoor" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-200 text-stone-400 hover:text-white">
+            Indoor Lounge
+          </button>
+          <button onclick="changeModalView('plan')" id="btn-view-plan" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-200 text-stone-400 hover:text-white">
+            Floor Plan
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Information, Specs, Action Button -->
+      <div class="lg:w-2/5 p-8 flex flex-col justify-between overflow-y-auto bg-stone-50">
+        <div>
+          <!-- Modal Header -->
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <span class="text-xs font-bold text-emerald-800 uppercase tracking-widest block mb-1">Eco-Home Specifications</span>
+              <h2 id="modal-house-title" class="text-2xl font-black text-stone-900">-</h2>
+            </div>
+            <button onclick="closeHouseModal()" class="bg-stone-200 hover:bg-stone-300 p-2 rounded-full text-stone-700 transition-colors">
+              <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+          </div>
+
+          <!-- Pricing Tag -->
+          <div class="bg-emerald-800 text-white rounded-2xl p-4 flex justify-between items-center mb-6 shadow-md">
+            <span class="text-sm font-semibold opacity-90">Estimated Total Cost:</span>
+            <span id="modal-house-price" class="text-2xl font-black">-</span>
+          </div>
+
+          <!-- Description Text -->
+          <div class="space-y-4 mb-6 text-sm leading-relaxed text-stone-600 font-medium">
+            <p id="modal-house-desc">-</p>
+          </div>
+
+          <!-- High Spec Metrics -->
+          <div class="border-y border-stone-200 py-4 my-6 grid grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <span class="text-[10px] font-black tracking-widest text-stone-400 uppercase">Living Space</span>
+              <span id="modal-spec-area" class="block text-sm font-bold text-stone-800">-</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] font-black tracking-widest text-stone-400 uppercase">Rooms layout</span>
+              <span id="modal-spec-rooms" class="block text-sm font-bold text-stone-800">-</span>
+            </div>
+            <div class="space-y-1 col-span-2">
+              <span class="text-[10px] font-black tracking-widest text-stone-400 uppercase">Energy Efficiency Rating</span>
+              <span class="inline-flex items-center text-sm font-bold text-emerald-700 gap-1.5">
+                <i data-lucide="sun" class="h-4 w-4"></i>
+                <span id="modal-spec-energy">-</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Booking Shortcut -->
+        <div class="space-y-3 pt-4">
+          <button id="modal-book-btn" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-bold py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center space-x-2 text-sm uppercase tracking-wider">
+            <i data-lucide="calendar" class="h-4 w-4 text-emerald-400"></i>
+            <span>Book a Plot Tour</span>
+          </button>
+          <p class="text-center text-xs text-stone-400 font-semibold">
+            Free zero-commitment architecture tour with certified ecological engineers.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tour Booking Success Modal -->
+  <div id="modal-booking-success" class="fixed inset-0 z-50 flex items-center justify-center bg-stone-950/80 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center space-y-6 shadow-2xl border border-stone-100">
+      <div class="mx-auto bg-emerald-100 text-emerald-800 p-4 rounded-full w-fit">
+        <i data-lucide="check-circle" class="h-10 w-10"></i>
+      </div>
+      <div class="space-y-2">
+        <h3 class="text-2xl font-black text-stone-900">Tour Confirmed!</h3>
+        <p class="text-stone-600 text-sm font-medium">
+          Thank you. Your viewing slot has been successfully scheduled.
+        </p>
+      </div>
+      <div class="bg-stone-50 rounded-2xl p-4 text-left border border-stone-100 space-y-2 text-xs font-semibold text-stone-600">
+        <div class="flex justify-between">
+          <span>Architect:</span>
+          <span id="success-booking-architect" class="text-stone-900 font-bold">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Plot Selected:</span>
+          <span id="success-booking-plot" class="text-stone-900 font-bold">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Assigned Hour:</span>
+          <span id="success-booking-time" class="text-emerald-800 font-bold">-</span>
+        </div>
+      </div>
+      <button onclick="closeModal('booking-success')" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition-all">
+        Got It, Thank You
+      </button>
+    </div>
+  </div>
+
+  <!-- Design Upload Success Modal -->
+  <div id="modal-upload-success" class="fixed inset-0 z-50 flex items-center justify-center bg-stone-950/80 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center space-y-6 shadow-2xl border border-stone-100">
+      <div class="mx-auto bg-emerald-100 text-emerald-800 p-4 rounded-full w-fit">
+        <i data-lucide="check-circle" class="h-10 w-10"></i>
+      </div>
+      <div class="space-y-2">
+        <h3 class="text-2xl font-black text-stone-900">Design Received!</h3>
+        <p class="text-stone-600 text-sm font-medium leading-relaxed">
+          We received your design and thank you for sharing your ideas with us. Our structural and thermodynamic auditing engineers will evaluate your files.
+        </p>
+      </div>
+      <button onclick="closeModal('upload-success')" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest transition-all">
+        Awesome, Thank You
+      </button>
+    </div>
+  </div>
+
+  <!-- Sustainable Footer -->
+  <footer class="bg-stone-900 text-stone-400 border-t border-stone-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2 text-white">
+            <i data-lucide="leaf" class="h-6 w-6 text-emerald-400"></i>
+            <span class="text-lg font-black uppercase tracking-widest">Arquitechtee</span>
+          </div>
+          <p class="text-xs leading-relaxed font-semibold">
+            Pioneering affordable, beautiful structural sanctuaries utilizing zero carbon, net positive solar infrastructure and advanced graywater treatment loops.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider">Our Services</h4>
+          <ul class="space-y-2 text-xs font-semibold">
+            <li><a href="#" onclick="event.preventDefault(); navigateTo('designs')" class="hover:text-white transition-colors">Residential Architectures</a></li>
+            <li><a href="#" onclick="event.preventDefault(); navigateTo('schedule')" class="hover:text-white transition-colors">Physical Eco Tours</a></li>
+            <li><a href="#" onclick="event.preventDefault(); navigateTo('upload')" class="hover:text-white transition-colors">Co-Design Analysis</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Solar Structural Auditing</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider">Concept Ecosystems</h4>
+          <ul class="space-y-2 text-xs font-semibold">
+            <li><a href="#" onclick="event.preventDefault(); openHouseModal('canopy-nest')" class="hover:text-white transition-colors">The Canopy Nest</a></li>
+            <li><a href="#" onclick="event.preventDefault(); openHouseModal('sol-oasis')" class="hover:text-white transition-colors">The Sol Oasis</a></li>
+            <li><a href="#" onclick="event.preventDefault(); openHouseModal('geode-loft')" class="hover:text-white transition-colors">The Geode Loft</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider">Global Headquarters</h4>
+          <p class="text-xs leading-relaxed font-semibold">
+            100 Earthway Green Boulevard,<br />
+            Sanctuary Meadows, CO 80231
+          </p>
+          <p class="text-xs font-bold text-emerald-400">
+            inquire@arquitechtee.com
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-stone-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-semibold">
+        <p>© <span id="footer-year">2026</span> Arquitechtee. All rights protected under global climate action accord guidelines.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-white transition-colors">Carbon Certificate</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Eco-Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE APPLICATION LOGIC (JavaScript) ================= -->
+  <script>
+    // --- HOUSE DESIGNS ARCHITECTURAL SVG DATA ---
+    const HOUSE_DESIGNS = [
+      {
+        id: 'canopy-nest',
+        title: 'The Canopy Nest',
+        price: 185000,
+        shortDescription: 'Elevated timber structural cabin prioritizing passive airflow and Minimal Land Footprint.',
+        fullDescription: 'Designed to integrate seamlessly into dense forestation, The Canopy Nest utilizes sustainably harvested cross-laminated timber (CLT) mounted on recycled structural steel pillars. Highly efficient natural cross-ventilation mitigates the need for active cooling.',
+        stats: { area: '1,200 sq ft', bedrooms: 2, baths: 1.5, energy: 'Net Zero-Ready' },
+        tags: ['Timber Framing', 'Passive Cooling', 'Low Impact'],
+        views: {
+          outdoor: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-gradient-to-b from-sky-100 to-emerald-50 rounded-lg">
+              <circle cx="700" cy="100" r="40" fill="#fef08a" opacity="0.8" />
+              <path d="M 0,350 Q 200,300 400,350 T 800,320 L 800,500 L 0,500 Z" fill="#065f46" opacity="0.8" />
+              <path d="M 0,390 Q 300,320 600,400 T 800,370 L 800,500 L 0,500 Z" fill="#022c22" />
+              <polygon points="120,180 80,380 160,380" fill="#044e3a" />
+              <polygon points="120,120 90,280 150,280" fill="#065f46" />
+              <polygon points="680,150 640,360 720,360" fill="#044e3a" />
+              <line x1="280" y1="340" x2="280" y2="420" stroke="#374151" stroke-width="8" />
+              <line x1="380" y1="340" x2="380" y2="430" stroke="#374151" stroke-width="8" />
+              <line x1="480" y1="340" x2="480" y2="420" stroke="#374151" stroke-width="8" />
+              <rect x="250" y="200" width="260" height="140" rx="12" fill="#78350f" stroke="#451a03" stroke-width="4" />
+              <rect x="270" y="220" width="130" height="100" rx="6" fill="#bae6fd" stroke="#451a03" stroke-width="3" opacity="0.9" />
+              <line x1="335" y1="220" x2="335" y2="320" stroke="#451a03" stroke-width="2" />
+              <polygon points="230,200 530,170 510,150 240,185" fill="#1e293b" />
+              <rect x="290" y="178" width="180" height="8" transform="rotate(-5, 380, 178)" fill="#1e3a8a" rx="2" />
+              <rect x="420" y="240" width="60" height="50" rx="4" fill="#bae6fd" stroke="#451a03" stroke-width="3" />
+              <rect x="210" y="295" width="40" height="45" fill="#b45309" />
+              <line x1="210" y1="295" x2="210" y2="340" stroke="#451a03" stroke-width="3" />
+              <line x1="210" y1="295" x2="250" y2="295" stroke="#451a03" stroke-width="3" />
+              <ellipse cx="380" cy="425" rx="140" ry="12" fill="#02140f" opacity="0.3" />
+              <text x="30" y="50" class="text-sm font-bold tracking-widest fill-emerald-800 uppercase font-sans">Exterior Canopy Facade</text>
+            </svg>
+          `,
+          indoor: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-stone-900 rounded-lg">
+              <rect x="40" y="40" width="720" height="420" fill="#292524" />
+              <path d="M 40,40 L 150,120 L 150,380 L 40,460 Z" fill="#1c1917" />
+              <path d="M 760,40 L 650,120 L 650,380 L 760,460 Z" fill="#1c1917" />
+              <rect x="180" y="100" width="440" height="240" rx="8" fill="#064e3b" />
+              <polygon points="300,160 260,340 340,340" fill="#043427" />
+              <polygon points="450,130 400,340 500,340" fill="#022c22" />
+              <polygon points="550,180 520,340 580,340" fill="#043427" />
+              <line x1="200" y1="120" x2="350" y2="320" stroke="#ffffff" stroke-width="2" opacity="0.15" />
+              <line x1="420" y1="120" x2="550" y2="300" stroke="#ffffff" stroke-width="2" opacity="0.15" />
+              <rect x="680" y="160" width="50" height="180" fill="#1e1b1c" />
+              <polygon points="665,340 745,340 725,380 685,380" fill="#121011" />
+              <circle cx="705" cy="360" r="10" fill="#ea580c" />
+              <circle cx="705" cy="360" r="5" fill="#facc15" />
+              <rect x="220" y="320" width="220" height="60" rx="10" fill="#e7e5e4" />
+              <rect x="200" y="340" width="260" height="45" rx="8" fill="#d6d3d1" />
+              <rect x="240" y="300" width="60" height="30" rx="4" fill="#a8a29e" />
+              <rect x="360" y="300" width="60" height="30" rx="4" fill="#a8a29e" />
+              <ellipse cx="120" cy="390" rx="20" ry="12" fill="#57534e" />
+              <path d="M 120,380 Q 110,300 130,220" fill="none" stroke="#292524" stroke-width="4" />
+              <circle cx="130" cy="220" r="15" fill="#15803d" opacity="0.9" />
+              <circle cx="105" cy="280" r="22" fill="#166534" opacity="0.9" />
+              <circle cx="140" cy="250" r="18" fill="#14532d" opacity="0.9" />
+              <line x1="400" y1="40" x2="400" y2="150" stroke="#d6d3d1" stroke-width="2" />
+              <ellipse cx="400" cy="155" rx="15" ry="10" fill="#fef08a" />
+              <circle cx="400" cy="155" r="4" fill="#f59e0b" />
+              <text x="60" y="80" class="text-sm font-bold tracking-widest fill-stone-400 uppercase font-sans">Cozy Interior Lounge</text>
+            </svg>
+          `,
+          plan: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-slate-900 rounded-lg">
+              <defs>
+                <pattern id="grid-pattern-canopy" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-pattern-canopy)" />
+              <rect x="20" y="20" width="760" height="460" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.4" />
+              <rect x="150" y="100" width="500" height="300" fill="none" stroke="#38bdf8" stroke-width="4" />
+              <line x1="380" y1="100" x2="380" y2="280" stroke="#38bdf8" stroke-width="3" />
+              <line x1="150" y1="280" x2="380" y2="280" stroke="#38bdf8" stroke-width="3" />
+              <line x1="280" y1="280" x2="280" y2="400" stroke="#38bdf8" stroke-width="3" />
+              <text x="500" y="240" class="text-lg font-bold fill-sky-300 font-mono text-center">LIVING / DINING</text>
+              <text x="210" y="200" class="text-sm fill-sky-400 font-mono">BEDROOM 1</text>
+              <text x="200" y="340" class="text-sm fill-sky-400 font-mono">BATH</text>
+              <text x="310" y="340" class="text-xs fill-sky-400 font-mono">UTILITY</text>
+              <line x1="150" y1="70" x2="650" y2="70" stroke="#e0f2fe" stroke-width="1" />
+              <circle cx="150" cy="70" r="3" fill="#38bdf8" />
+              <circle cx="650" cy="70" r="3" fill="#38bdf8" />
+              <text x="380" y="65" class="text-xs fill-sky-300 font-mono text-center">50' - 0"</text>
+              <line x1="100" y1="100" x2="100" y2="400" stroke="#e0f2fe" stroke-width="1" />
+              <circle cx="100" cy="100" r="3" fill="#38bdf8" />
+              <circle cx="100" cy="400" r="3" fill="#38bdf8" />
+              <text x="60" y="260" class="text-xs fill-sky-300 font-mono" transform="rotate(-90 60 260)">30' - 0"</text>
+              <circle cx="700" cy="100" r="25" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+              <line x1="700" y1="70" x2="700" y2="130" stroke="#38bdf8" stroke-width="1.5" />
+              <line x1="670" y1="100" x2="730" y2="100" stroke="#38bdf8" stroke-width="1.5" />
+              <text x="696" y="65" class="text-xs font-bold fill-sky-300 font-mono">N</text>
+              <text x="40" y="450" class="text-xs font-bold tracking-widest fill-sky-400 uppercase font-mono">Blueprint / Spec Layout</text>
+            </svg>
+          `
+        }
+      },
+      {
+        id: 'sol-oasis',
+        title: 'The Sol Oasis',
+        price: 320000,
+        shortDescription: 'Rammed-earth construction optimized for high-yield solar collection and water recycling.',
+        fullDescription: 'Constructed from thermal-mass heavy rammed earth, The Sol Oasis thrives in arid and Mediterranean zones. Fully integrated active photovoltaic shade structures shield the living spaces while producing up to 18kW of electricity daily.',
+        stats: { area: '1,950 sq ft', bedrooms: 3, baths: 2, energy: 'Positive Energy' },
+        tags: ['Rammed Earth', 'Solar Active', 'Graywater Loop'],
+        views: {
+          outdoor: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-gradient-to-b from-amber-100 to-orange-100 rounded-lg">
+              <circle cx="400" cy="180" r="90" fill="#fef08a" opacity="0.6" />
+              <path d="M 0,380 Q 250,320 500,400 T 800,360 L 800,500 L 0,500 Z" fill="#d97706" opacity="0.7" />
+              <path d="M 0,420 Q 350,370 700,440 T 800,410 L 800,500 L 0,500 Z" fill="#b45309" />
+              <path d="M 120,380 L 120,320 Q 120,300 130,300 L 140,300 M 120,340 Q 110,340 110,330" fill="none" stroke="#14532d" stroke-width="6" stroke-linecap="round" />
+              <rect x="220" y="240" width="360" height="180" rx="16" fill="#ca8a04" stroke="#a16207" stroke-width="4" />
+              <polygon points="180,240 620,240 600,200 200,200" fill="#1e3a8a" />
+              <line x1="220" y1="200" x2="220" y2="240" stroke="#0f172a" stroke-width="3" />
+              <line x1="320" y1="200" x2="320" y2="240" stroke="#0f172a" stroke-width="3" />
+              <line x1="420" y1="200" x2="420" y2="240" stroke="#0f172a" stroke-width="3" />
+              <line x1="520" y1="200" x2="520" y2="240" stroke="#0f172a" stroke-width="3" />
+              <path d="M 360,420 L 360,320 A 40,40 0 0 1 440,320 L 440,420 Z" fill="#93c5fd" stroke="#a16207" stroke-width="3" />
+              <line x1="400" y1="280" x2="400" y2="420" stroke="#a16207" stroke-width="2" />
+              <line x1="220" y1="290" x2="320" y2="290" stroke="#a16207" stroke-width="2" stroke-dasharray="5,5" />
+              <line x1="480" y1="290" x2="580" y2="290" stroke="#a16207" stroke-width="2" stroke-dasharray="5,5" />
+              <text x="30" y="50" class="text-sm font-bold tracking-widest fill-amber-900 uppercase font-sans">Desert Clay Facade</text>
+            </svg>
+          `,
+          indoor: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-amber-50 rounded-lg">
+              <rect x="40" y="40" width="720" height="420" fill="#fef3c7" />
+              <path d="M 40,40 Q 200,80 200,250 T 40,460" fill="#fde68a" />
+              <path d="M 760,40 Q 600,80 600,250 T 760,460" fill="#fde68a" />
+              <rect x="360" y="40" width="80" height="420" fill="#d97706" />
+              <rect x="340" y="320" width="120" height="80" rx="10" fill="#b45309" />
+              <circle cx="400" cy="360" r="15" fill="#ef4444" />
+              <circle cx="400" cy="360" r="8" fill="#f59e0b" />
+              <polygon points="280,40 520,40 560,180 240,180" fill="#fef08a" opacity="0.15" />
+              <line x1="280" y1="40" x2="520" y2="40" stroke="#d97706" stroke-width="3" />
+              <rect x="100" y="360" width="180" height="60" rx="8" fill="#d97706" />
+              <rect x="120" y="340" width="60" height="20" rx="4" fill="#ef4444" />
+              <rect x="190" y="340" width="60" height="20" rx="4" fill="#ef4444" />
+              <text x="60" y="80" class="text-sm font-bold tracking-widest fill-amber-800 uppercase font-sans">Thermal Mass Living Quarters</text>
+            </svg>
+          `,
+          plan: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-slate-900 rounded-lg">
+              <defs>
+                <pattern id="grid-pattern-sol" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-pattern-sol)" />
+              <rect x="20" y="20" width="760" height="460" fill="none" stroke="#eab308" stroke-width="2" opacity="0.4" />
+              <rect x="120" y="80" width="560" height="340" rx="10" fill="none" stroke="#eab308" stroke-width="8" />
+              <line x1="400" y1="80" x2="400" y2="420" stroke="#eab308" stroke-width="4" />
+              <line x1="120" y1="240" x2="400" y2="240" stroke="#eab308" stroke-width="4" />
+              <line x1="400" y1="250" x2="680" y2="250" stroke="#eab308" stroke-width="4" />
+              <text x="260" y="160" class="text-base font-bold fill-yellow-200 font-mono">COURTYARD / DECK</text>
+              <text x="540" y="170" class="text-sm fill-yellow-300 font-mono">LIVING AREA</text>
+              <text x="210" y="330" class="text-sm fill-yellow-300 font-mono">MASTER SUITE</text>
+              <text x="500" y="330" class="text-sm fill-yellow-300 font-mono">GUEST ROOM & SPA</text>
+              <text x="40" y="450" class="text-xs font-bold tracking-widest fill-yellow-400 uppercase font-mono">Passive Thermal Performance Layout</text>
+            </svg>
+          `
+        }
+      },
+      {
+        id: 'geode-loft',
+        title: 'The Geode Loft',
+        price: 450000,
+        shortDescription: 'Sub-grade geothermal loft featuring a gorgeous glass-dome roof structure.',
+        fullDescription: 'Partially submerged to benefit from continuous natural geothermal insulation, the Geode Loft integrates structural concrete from recycled aggregates and an expansive hexagonal geodesic dome ceiling that bathes the space in light.',
+        stats: { area: '2,400 sq ft', bedrooms: 4, baths: 3, energy: 'Self-Sustaining Grid' },
+        tags: ['Geothermal', 'Hex Geodesic', 'Sub-Grade Insulation'],
+        views: {
+          outdoor: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-gradient-to-b from-blue-100 to-indigo-50 rounded-lg">
+              <path d="M 0,300 L 150,150 L 300,300 L 450,180 L 600,320 L 800,200 L 800,500 L 0,500 Z" fill="#1e1b4b" opacity="0.8" />
+              <path d="M 0,380 Q 300,330 600,420 T 800,390 L 800,500 L 0,500 Z" fill="#312e81" />
+              <path d="M 0,430 L 800,430 L 800,500 L 0,500 Z" fill="#065f46" />
+              <path d="M 280,430 C 280,310 520,310 520,430 Z" fill="#e0f2fe" stroke="#312e81" stroke-width="4" opacity="0.85" />
+              <path d="M 280,430 L 340,370 L 400,330 L 460,370 L 520,430" fill="none" stroke="#4f46e5" stroke-width="3" />
+              <path d="M 340,370 L 400,430 L 460,370" fill="none" stroke="#4f46e5" stroke-width="3" />
+              <line x1="400" y1="330" x2="400" y2="430" stroke="#4f46e5" stroke-width="3" />
+              <line x1="285" y1="410" x2="340" y2="370" stroke="#4f46e5" stroke-width="2" />
+              <line x1="515" y1="410" x2="460" y2="370" stroke="#4f46e5" stroke-width="2" />
+              <rect x="230" y="430" width="340" height="50" fill="#111827" opacity="0.2" />
+              <text x="30" y="50" class="text-sm font-bold tracking-widest fill-indigo-900 uppercase font-sans">Subterranean Geode Dome</text>
+            </svg>
+          `,
+          indoor: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-slate-950 rounded-lg">
+              <path d="M 100,50 L 700,50 L 600,280 L 200,280 Z" fill="#1e1b4b" stroke="#4f46e5" stroke-width="3" />
+              <line x1="200" y1="280" x2="100" y2="50" stroke="#4f46e5" stroke-width="4" />
+              <line x1="600" y1="280" x2="700" y2="50" stroke="#4f46e5" stroke-width="4" />
+              <line x1="400" y1="50" x2="400" y2="280" stroke="#4f46e5" stroke-width="4" />
+              <line x1="250" y1="165" x2="550" y2="165" stroke="#4f46e5" stroke-width="2" />
+              <circle cx="400" cy="110" r="10" fill="#fef08a" />
+              <rect x="40" y="280" width="720" height="180" fill="#374151" />
+              <line x1="40" y1="280" x2="760" y2="280" stroke="#4f46e5" stroke-width="3" />
+              <rect x="520" y="320" width="180" height="15" fill="#1f2937" stroke="#4f46e5" stroke-width="1" />
+              <rect x="550" y="350" width="150" height="15" fill="#1f2937" stroke="#4f46e5" stroke-width="1" />
+              <rect x="580" y="380" width="120" height="15" fill="#1f2937" stroke="#4f46e5" stroke-width="1" />
+              <text x="60" y="325" class="text-sm font-bold tracking-widest fill-slate-300 uppercase font-sans">Subterrene Geometric Sanctuary</text>
+            </svg>
+          `,
+          plan: `
+            <svg viewBox="0 0 800 500" class="w-full h-full bg-slate-900 rounded-lg">
+              <defs>
+                <pattern id="grid-pattern-geode" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-pattern-geode)" />
+              <rect x="20" y="20" width="760" height="460" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.4" />
+              <polygon points="400,60 650,170 650,390 400,470 150,390 150,170" fill="none" stroke="#6366f1" stroke-width="6" />
+              <line x1="400" y1="60" x2="400" y2="470" stroke="#6366f1" stroke-width="3" />
+              <line x1="150" y1="280" x2="650" y2="280" stroke="#6366f1" stroke-width="3" />
+              <text x="230" y="180" class="text-sm fill-indigo-300 font-mono">ECO BEDROOM A</text>
+              <text x="470" y="180" class="text-sm fill-indigo-300 font-mono">ECO BEDROOM B</text>
+              <text x="230" y="360" class="text-sm fill-indigo-300 font-mono">KITCHEN / CO-OP</text>
+              <text x="470" y="360" class="text-sm fill-indigo-300 font-mono">GEOTHERMAL PLANT</text>
+              <text x="40" y="450" class="text-xs font-bold tracking-widest fill-indigo-400 uppercase font-mono">Geodesic Circular Ground Layout</text>
+            </svg>
+          `
+        }
+      }
+    ];
+
+    // --- LANDLORDS ARCHITECT DATA ---
+    const LANDLORDS = [
+      {
+        id: 1,
+        name: "Elena Vance",
+        specialty: "Solar integration & Off-grid structures",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200",
+        schedule: {
+          "09:00 AM": "Available",
+          "11:00 AM": "Booked",
+          "01:00 PM": "Available",
+          "03:00 PM": "Available",
+          "05:00 PM": "Booked"
+        }
+      },
+      {
+        id: 2,
+        name: "Marcus Reed",
+        specialty: "Subterranean systems & Rammed earth construction",
+        avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200",
+        schedule: {
+          "09:00 AM": "Booked",
+          "11:00 AM": "Available",
+          "01:00 PM": "Booked",
+          "03:00 PM": "Available",
+          "05:00 PM": "Available"
+        }
+      },
+      {
+        id: 3,
+        name: "Sienna Brooks",
+        specialty: "Zero-waste architectural systems",
+        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200",
+        schedule: {
+          "09:00 AM": "Available",
+          "11:00 AM": "Available",
+          "01:00 PM": "Booked",
+          "03:00 PM": "Booked",
+          "05:00 PM": "Available"
+        }
+      }
+    ];
+
+    // --- APPLICATION STATE ---
+    let currentPage = 'home';
+    let selectedHouse = null;
+    let activeHouseView = 'outdoor';
+    let selectedLandlordId = 1;
+    let selectedTimeSlot = '';
+    let bookedSlots = {}; // Local mapping: `${landlordId}-${timeSlot}` -> bookingDetails
+    let uploadedDesigns = [];
+
+    // --- ROUTING ENGINE ---
+    function navigateTo(pageId) {
+      currentPage = pageId;
+      
+      // Update header active styling
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('bg-emerald-800', 'text-white', 'shadow-md', 'shadow-emerald-950/10');
+        btn.classList.add('text-stone-600', 'hover:text-emerald-800', 'hover:bg-emerald-50/50');
+      });
+      const activeBtn = document.getElementById(`nav-${pageId}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-stone-600', 'hover:text-emerald-800', 'hover:bg-emerald-50/50');
+        activeBtn.classList.add('bg-emerald-800', 'text-white', 'shadow-md', 'shadow-emerald-950/10');
+      }
+
+      // Hide all pages, show active page
+      document.querySelectorAll('.page-content').forEach(page => {
+        page.classList.add('hidden');
+      });
+      const activePageEl = document.getElementById(`page-${pageId}`);
+      if (activePageEl) {
+        activePageEl.classList.remove('hidden');
+      }
+
+      // Scroll smoothly to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Build context page logic
+      if (pageId === 'designs') {
+        renderDesignsCatalog();
+      } else if (pageId === 'schedule') {
+        renderScheduler();
+      } else if (pageId === 'upload') {
+        renderUploadsFeed();
+      }
+
+      // Re-initialize Lucide Icons for dynamic contents
+      lucide.createIcons();
+    }
+
+    // --- CATALOG RENDERING ---
+    function renderDesignsCatalog() {
+      const grid = document.getElementById('designs-grid');
+      grid.innerHTML = '';
+
+      HOUSE_DESIGNS.forEach(house => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-3xl overflow-hidden border border-stone-100 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col h-full";
+        card.onclick = () => openHouseModal(house.id);
+
+        card.innerHTML = `
+          <!-- Visual Preview Frame -->
+          <div class="relative aspect-video bg-emerald-950 overflow-hidden">
+            ${house.views.outdoor}
+            <div class="absolute inset-0 bg-stone-950/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="bg-white/90 backdrop-blur text-stone-900 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest shadow-md">
+                Click to Inspect Plot
+              </span>
+            </div>
+          </div>
+
+          <!-- Meta description -->
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-stone-900 group-hover:text-emerald-800 transition-colors duration-200">
+                  ${house.title}
+                </h3>
+                <div class="text-lg font-black text-emerald-800">
+                  $${house.price.toLocaleString()}
+                </div>
+              </div>
+
+              <p class="text-stone-600 text-sm leading-relaxed">
+                ${house.shortDescription}
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                ${house.tags.map(tag => `
+                  <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md text-xs font-semibold">
+                    ${tag}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Details row and action -->
+            <div class="border-t border-stone-100 pt-4 flex justify-between items-center">
+              <div class="flex space-x-3 text-xs text-stone-500 font-medium">
+                <span>${house.stats.area}</span>
+                <span>•</span>
+                <span>${house.stats.bedrooms} Beds</span>
+              </div>
+              <span class="text-emerald-800 group-hover:translate-x-1.5 transition-transform duration-200 text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+                <span>Inspect View</span>
+                <i data-lucide="arrow-right" class="h-3 w-3"></i>
+              </span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // --- HOUSE INSPECTION MODAL SYSTEM ---
+    function openHouseModal(houseId) {
+      selectedHouse = HOUSE_DESIGNS.find(h => h.id === houseId);
+      activeHouseView = 'outdoor';
+
+      if (!selectedHouse) return;
+
+      // Update Modal content
+      document.getElementById('modal-house-title').innerText = selectedHouse.title;
+      document.getElementById('modal-house-price').innerText = `$${selectedHouse.price.toLocaleString()}`;
+      document.getElementById('modal-house-desc').innerText = selectedHouse.fullDescription;
+      document.getElementById('modal-spec-area').innerText = selectedHouse.stats.area;
+      document.getElementById('modal-spec-rooms').innerText = `${selectedHouse.stats.bedrooms} Beds / ${selectedHouse.stats.baths} Baths`;
+      document.getElementById('modal-spec-energy').innerText = selectedHouse.stats.energy;
+
+      // Render Active View
+      renderModalView();
+
+      // Configure Modal Booking shortcut button
+      const bookBtn = document.getElementById('modal-book-btn');
+      bookBtn.onclick = () => {
+        closeHouseModal();
+        // pre-populate scheduling page selection
+        const selectEl = document.getElementById('booking-plot-select');
+        if (selectEl) selectEl.value = selectedHouse.title;
+        navigateTo('schedule');
+      };
+
+      // Show Modal
+      document.getElementById('modal-inspection').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeHouseModal() {
+      document.getElementById('modal-inspection').classList.add('hidden');
+    }
+
+    function changeModalView(viewName) {
+      activeHouseView = viewName;
+      renderModalView();
+    }
+
+    function renderModalView() {
+      if (!selectedHouse) return;
+
+      // Set view title
+      document.getElementById('modal-view-title').innerText = activeHouseView;
+
+      // Set active button styles
+      ['outdoor', 'indoor', 'plan'].forEach(v => {
+        const btn = document.getElementById(`btn-view-${v}`);
+        if (v === activeHouseView) {
+          btn.className = "flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-200 bg-emerald-800 text-white shadow";
+        } else {
+          btn.className = "flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-200 text-stone-400 hover:text-white";
+        }
+      });
+
+      // Inject active SVG
+      document.getElementById('modal-svg-frame').innerHTML = selectedHouse.views[activeHouseView];
+    }
+
+    // --- TOUR SCHEDULER SYSTEM ---
+    function renderScheduler() {
+      // Setup plot dropdown selections
+      const plotSelect = document.getElementById('booking-plot-select');
+      plotSelect.innerHTML = HOUSE_DESIGNS.map(h => `<option value="${h.title}">${h.title}</option>`).join('');
+
+      // Render Landlords Profiles List
+      const landlordContainer = document.getElementById('landlords-container');
+      landlordContainer.innerHTML = '';
+
+      LANDLORDS.forEach(landlord => {
+        const isSelected = landlord.id === selectedLandlordId;
+        const card = document.createElement('div');
+        card.className = `p-5 rounded-2xl bg-white border cursor-pointer transition-all duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ${
+          isSelected 
+            ? 'border-emerald-800 ring-2 ring-emerald-800/20 shadow-md' 
+            : 'border-stone-200 hover:border-stone-300 hover:shadow-sm'
+        }`;
+        card.onclick = () => selectLandlord(landlord.id);
+
+        // Schedule highlights
+        const scheduleTags = Object.entries(landlord.schedule).map(([time, status]) => {
+          const isCurrentlyBooked = bookedSlots[`${landlord.id}-${time}`] || status === 'Booked';
+          return `
+            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md ${
+              isCurrentlyBooked 
+                ? 'bg-stone-100 text-stone-400 line-through decoration-stone-300' 
+                : 'bg-emerald-50 text-emerald-800'
+            }">
+              ${time}
+            </span>
+          `;
+        }).join('');
+
+        card.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <img src="${landlord.avatar}" alt="${landlord.name}" class="w-16 h-16 rounded-xl object-cover border border-stone-200" />
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="font-bold text-stone-900 text-base">${landlord.name}</h4>
+                ${isSelected ? `<span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Selected</span>` : ''}
+              </div>
+              <p class="text-xs text-emerald-700 font-bold mt-0.5">${landlord.specialty}</p>
+              <span class="inline-flex items-center text-[11px] text-stone-500 font-semibold gap-1.5 mt-2">
+                <i data-lucide="clock" class="h-3 w-3"></i>
+                <span>Multi-zone Available Today</span>
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1 md:justify-end max-w-xs">
+            ${scheduleTags}
+          </div>
+        `;
+        landlordContainer.appendChild(card);
+      });
+
+      // Update Form State Labels
+      const currentLandlord = LANDLORDS.find(l => l.id === selectedLandlordId);
+      document.getElementById('booking-representative').innerText = currentLandlord.name;
+      document.getElementById('slots-header-title').innerText = `Choose ${currentLandlord.name}'s Available Slots`;
+
+      // Render active schedule hours/slots grid
+      const slotsGrid = document.getElementById('time-slots-grid');
+      slotsGrid.innerHTML = '';
+
+      Object.entries(currentLandlord.schedule).map(([time, status]) => {
+        const isCurrentlyBooked = bookedSlots[`${selectedLandlordId}-${time}`] || status === 'Booked';
+        const isSelectedSlot = selectedTimeSlot === time;
+
+        const button = document.createElement('button');
+        button.type = "button";
+        if (isCurrentlyBooked) button.disabled = true;
+
+        button.className = `p-3 text-xs font-bold rounded-xl border text-center transition-all ${
+          isCurrentlyBooked
+            ? 'bg-stone-100 border-stone-200 text-stone-400 cursor-not-allowed'
+            : isSelectedSlot
+            ? 'bg-emerald-800 border-emerald-800 text-white shadow'
+            : 'bg-white border-stone-200 text-stone-700 hover:border-emerald-800 hover:bg-emerald-50/50'
+        }`;
+
+        button.onclick = () => selectTimeSlot(time);
+
+        button.innerHTML = `
+          <span class="block text-sm">${time}</span>
+          <span class="block text-[9px] font-bold mt-0.5 uppercase opacity-80">
+            ${isCurrentlyBooked ? 'Unavailable' : 'Select'}
+          </span>
+        `;
+        slotsGrid.appendChild(button);
+      });
+
+      // Update Appointment booking submit button state
+      const submitBtn = document.getElementById('booking-submit-btn');
+      const submitText = document.getElementById('booking-submit-text');
+
+      if (selectedTimeSlot) {
+        submitBtn.disabled = false;
+        submitBtn.className = "w-full font-bold py-4 rounded-xl text-xs uppercase tracking-wider shadow-md transition-all duration-200 flex items-center justify-center space-x-2 bg-emerald-800 hover:bg-emerald-700 text-white shadow-emerald-950/20";
+        submitText.innerText = `Book for ${selectedTimeSlot}`;
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.className = "w-full font-bold py-4 rounded-xl text-xs uppercase tracking-wider shadow-md transition-all duration-200 flex items-center justify-center space-x-2 bg-stone-200 text-stone-400 cursor-not-allowed";
+        submitText.innerText = 'Select a Time Slot First';
+      }
+    }
+
+    function selectLandlord(id) {
+      selectedLandlordId = id;
+      selectedTimeSlot = ''; // Reset selected slot on swap
+      renderScheduler();
+      lucide.createIcons();
+    }
+
+    function selectTimeSlot(time) {
+      selectedTimeSlot = time;
+      renderScheduler();
+      lucide.createIcons();
+    }
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      if (!selectedTimeSlot) return;
+
+      const clientName = document.getElementById('booking-client-name').value;
+      const clientEmail = document.getElementById('booking-client-email').value;
+      const plot = document.getElementById('booking-plot-select').value;
+      const landlord = LANDLORDS.find(l => l.id === selectedLandlordId);
+
+      // Book the hour slot locally
+      const bookingKey = `${selectedLandlordId}-${selectedTimeSlot}`;
+      bookedSlots[bookingKey] = { name: clientName, plot: plot };
+
+      // Update success Modal details
+      document.getElementById('success-booking-architect').innerText = landlord.name;
+      document.getElementById('success-booking-plot').innerText = plot;
+      document.getElementById('success-booking-time').innerText = selectedTimeSlot;
+
+      // Show confirmation popup
+      document.getElementById('modal-booking-success').classList.remove('hidden');
+
+      // Clear Form inputs
+      document.getElementById('booking-client-name').value = '';
+      document.getElementById('booking-client-email').value = '';
+      selectedTimeSlot = '';
+
+      renderScheduler();
+      lucide.createIcons();
+    }
+
+    // --- CO-DESIGN UPLOAD LAB ---
+    function renderUploadsFeed() {
+      const feed = document.getElementById('uploads-feed');
+      feed.innerHTML = '';
+
+      if (uploadedDesigns.length === 0) {
+        feed.innerHTML = `
+          <div class="bg-stone-100 border-2 border-dashed border-stone-200 rounded-3xl p-8 text-center text-stone-400">
+            <p class="text-sm font-semibold">No custom plans uploaded in this session yet.</p>
+            <p class="text-xs mt-1">Submit your project on the right to start our collection.</p>
+          </div>
+        `;
+      } else {
+        uploadedDesigns.forEach(design => {
+          const card = document.createElement('div');
+          card.className = "bg-white p-5 rounded-2xl border border-stone-100 shadow-md space-y-3";
+          card.innerHTML = `
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold text-stone-900">${escapeHTML(design.title)}</h4>
+                <span class="text-[10px] text-stone-400 font-semibold uppercase">By ${escapeHTML(design.name)} • ${design.date}</span>
+              </div>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-md">
+                Est: $${parseInt(design.price).toLocaleString()}
+              </span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed font-semibold italic">
+              "${escapeHTML(design.description)}"
+            </p>
+            <div class="flex flex-wrap gap-2 text-[10px] font-bold">
+              <span class="bg-stone-100 text-stone-600 px-2 py-0.5 rounded">Materials: ${escapeHTML(design.materials)}</span>
+            </div>
+          `;
+          feed.appendChild(card);
+        });
+      }
+    }
+
+    function handleUploadSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('upload-name').value;
+      const email = document.getElementById('upload-email').value;
+      const title = document.getElementById('upload-title').value;
+      const price = document.getElementById('upload-price').value;
+      const materials = document.getElementById('upload-materials').value;
+      const description = document.getElementById('upload-desc').value;
+
+      const newDesign = {
+        name,
+        email,
+        title,
+        price,
+        materials,
+        description,
+        date: new Date().toLocaleDateString()
+      };
+
+      // Push custom uploads
+      uploadedDesigns.unshift(newDesign);
+
+      // Reset form controls
+      document.getElementById('upload-form').reset();
+
+      // Trigger custom UI popup
+      document.getElementById('modal-upload-success').classList.remove('hidden');
+
+      // Refresh co-design feed view
+      renderUploadsFeed();
+      lucide.createIcons();
+    }
+
+    // --- MODAL HELPERS ---
+    function closeModal(modalId) {
+      document.getElementById(`modal-${modalId}`).classList.add('hidden');
+    }
+
+    // Secure string rendering helper
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[tag] || tag)
+      );
+    }
+
+    // --- ON COMPONENT BOOT ---
+    window.onload = function() {
+      // Set footer year correctly
+      document.getElementById('footer-year').innerText = new Date().getFullYear();
+
+      // Initial load canopy nest preview in hero block
+      document.getElementById('hero-svg-container').innerHTML = HOUSE_DESIGNS[0].views.outdoor;
+
+      // Start on Home
+      navigateTo('home');
+    }
+  </script>
+</body>
+</html>
